@@ -127,9 +127,16 @@ form.onsubmit = (e) => {
 
   for (let i = 0; i < form_inputs.length; i++) {
     let form_input = form_inputs[i];
-    if (form_input.value == "" || form_input.invalid) {
+    if (form_input.value == "") {
       form_input.parentElement.classList.add("error");
       error++;
+    }
+
+    if (
+      form_input.value !== "" &&
+      form_input.parentElement.classList.contains("error")
+    ) {
+      form_input.parentElement.classList.remove("error");
     }
   }
 
