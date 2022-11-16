@@ -235,6 +235,11 @@ p {
   cursor: pointer;
 }
 
+/* Error Item ( Invalid ) */
+.form_body-point.error {
+  border: 2px solid red;
+}
+
 /* Map Section */
 #map {
   width: 470px;

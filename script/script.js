@@ -30,7 +30,7 @@ const createButtonSelect = (parent, placeholder) => {
   button.addEventListener("blur", () => {
     setTimeout(() => {
       button.classList.remove("active");
-    }, 100);
+    }, 200);
   });
 };
 
@@ -62,6 +62,7 @@ const createInputOptionValue = (parent) => {
   input.setAttribute("class", "selected_option");
   input.setAttribute("type", "text");
   input.disabled = true;
+  input.required = true;
   parent.appendChild(input);
 };
 
@@ -110,6 +111,33 @@ function setOption() {
   select.classList.remove("active");
 }
 
+// A Little Validate Form
+
+let form = document.querySelector(".form_body");
+
+form.onsubmit = (e) => {
+  let form_inputs = form.querySelectorAll("input"),
+    error = 0;
+
+  inputs.forEach((input) => {
+    if (input.value == "") {
+      error++;
+    }
+  });
+
+  for (let i = 0; i < form_inputs.length; i++) {
+    let form_input = form_inputs[i];
+    if (form_input.value == "" || form_input.invalid) {
+      form_input.parentElement.classList.add("error");
+      error++;
+    }
+  }
+
+  if (error > 0) {
+    e.preventDefault();
+  }
+};
+
 // Map
 
 // Content In Content Menu
@@ -131,6 +159,8 @@ const content = `<div class="content">
 </div>`;
 
 // Create Map, Set Zoom, Remove Controls
+let map;
+
 map = new google.maps.Map(document.getElementById("map"), {
   center: { lat: 43.45162864328603, lng: -80.51385701353273 },
   zoom: 17,
