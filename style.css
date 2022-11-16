@@ -1,0 +1,377 @@
+@import url("./fonts/AvenirNext.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* General Settings */
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, yellow, blue);
+}
+
+/* Roots */
+
+body * {
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+/* Common Font Style */
+.text-normal {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 175%;
+}
+
+/* Main Text Color */
+.form_text-color {
+  color: rgba(65, 64, 66, 0.5);
+}
+
+/* Wrapper */
+.wrapper {
+  max-width: 1140px;
+  margin: auto;
+  display: flex;
+  column-gap: 40px;
+}
+
+/* Form Header ( H1 ) */
+.form_header {
+  font-family: "Avenir Next";
+  font-size: 32px;
+  line-height: 44px;
+  color: #1a1a1a;
+  margin-bottom: 13px;
+}
+
+/* Form Description ( Paragraph ) */
+.form_descriprion {
+  color: #1a1a1a;
+  margin-bottom: 35px;
+}
+
+/* Form Content */
+.form_body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  column-gap: 32px;
+  row-gap: 35px;
+}
+
+/* Form Point Block */
+.form_body-point {
+  position: relative;
+  box-shadow: 0px 16px 32px rgba(202, 203, 210, 0.25);
+  border-radius: 8px;
+  width: 100%;
+  height: 64px;
+}
+
+/* Form Input */
+.form_point-input {
+  border: none;
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  padding-left: 19px;
+}
+
+/* Form Label */
+.form_point-label {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Iputs On Focus Or With Info Inside */
+.form_point-input:focus ~ .form_point-label,
+.form_point-input.filled ~ .form_point-label {
+  display: none;
+}
+
+/* Form Select Element */
+.form_body-select {
+  width: 100%;
+  height: 100%;
+  padding-left: 19px;
+  padding-right: 35px;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Arrow */
+.form_body-select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 19px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 6px;
+  background-image: url("./images/arrow.png");
+}
+
+/* Options Wrapper */
+.form_select-list {
+  position: relative;
+  display: none;
+  margin-top: -5px;
+  margin-bottom: 0;
+  padding-left: 19px;
+  padding-right: 19px;
+  background-color: #ffffff;
+  list-style-type: none;
+  z-index: 2;
+  box-shadow: 0px 16px 32px rgba(202, 203, 210, 0.25);
+}
+
+/* Options */
+.form_select-list-item {
+  color: #424242;
+  cursor: pointer;
+}
+
+/* Options Distance */
+.form_select-list-item + .form_select-list-item {
+  margin-top: 13px;
+}
+
+/* Hover Options Effect */
+.form_select-list-item:hover {
+  background-color: #f2f2f2;
+  padding-left: 13px;
+}
+
+/* Options Open */
+.form_body-select.active ~ .form_select-list {
+  display: block;
+}
+
+/* Input Selected Option */
+.selected_option {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+  opacity: 0;
+}
+
+/* Longest Input (Bottom) */
+.two-sections {
+  grid-column: 1 / span 2;
+}
+
+/* Block With Textarea ( Textarea Point ) */
+.form_body-point-textarea {
+  height: 338px;
+  margin-top: 18px;
+}
+
+/* Textarea Field */
+.textarea-comment {
+  width: 100%;
+  height: 100%;
+  padding: 18px 19px;
+  border: none;
+  box-shadow: 0px 16px 32px rgba(202, 203, 210, 0.25);
+  border-radius: 8px;
+}
+
+/* Textaarea Label */
+.form_body-point-textarea .form_point-label-comment {
+  position: absolute;
+  top: 18px;
+  left: 19px;
+  pointer-events: none;
+}
+
+/* Textarea On Focus Or With Info Inside */
+.textarea-comment:focus ~ .form_point-label-comment,
+.textarea-comment.filled ~ .form_point-label-comment {
+  display: none;
+}
+
+/* Button Submit */
+.submit {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  max-width: 220px;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+/* Map Section */
+#map {
+  width: 470px;
+  height: 936px;
+  align-self: center;
+  position: relative;
+}
+
+/* Map Wrapper */
+[tabindex="0"] {
+  position: relative;
+}
+
+/* LightYellow Background */
+[tabindex="0"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(202, 202, 187, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content Block On Map */
+
+/* Content Block Wrapper */
+.gm-style-iw,
+.gm-style-iw-d {
+  padding: 0 !important;
+  max-width: 244px !important;
+  overflow: hidden !important;
+}
+
+/* Content Body */
+.content {
+  width: 244px;
+  height: 161px;
+  padding: 20px 0px 17px 19px;
+}
+
+/* Text Inside Content Block ( Paragraph And Header ) */
+.content .content_text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #1a1a1a;
+}
+
+/* Blocks With Contacts */
+.content_contact {
+  display: flex;
+  align-items: center;
+  column-gap: 9px;
+}
+
+/* Images In Blocks With Contacts */
+.content_contact-image {
+  max-width: 12px;
+  max-height: 12px;
+}
+
+/* Text In Blocks With Contacts */
+.content_contact-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: #858585;
+}
+
+/* Button Close Content Menu */
+.gm-ui-hover-effect {
+  display: none !important;
+}
+
+/* Tablet Version At My Discretion */
+/* @media (max-width: ) {
+  
+} */
+
+/* Mobile Version */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  /* Wrapper */
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 77px 20px 133px;
+    flex-direction: column;
+    row-gap: 63px;
+  }
+
+  /* Form Description ( Paragraph ) */
+  .form_descriprion {
+    margin-bottom: 31px;
+  }
+
+  /* Form Content */
+  .form_body {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 37px;
+  }
+
+  /* Longest Input (Bottom) */
+  .two-sections {
+    grid-column: 1 / span 1;
+  }
+
+  /* Last Select Section  */
+  .form_select-point.two-sections {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* Block With Textarea ( Textarea Point ) */
+  .form_body-point-textarea {
+    margin-top: 0;
+  }
+
+  /* Button Submit */
+  .submit {
+    max-width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 0;
+  }
+
+  /* Map Section */
+  #map {
+    width: 100%;
+    height: 575px;
+    align-self: center;
+    position: relative;
+  }
+}

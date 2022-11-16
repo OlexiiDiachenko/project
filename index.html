@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script/script.js" defer></script>
+    <title>Interview</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="form">
+        <h1 class="form_header">Contact Us</h1>
+        <p class="form_descriprion text-normal">
+          The Voodoo team is looking forward to hearing from you!
+        </p>
+        <form action="" class="form_body">
+          <!-- Full Name -->
+          <div class="form_body-point">
+            <input
+              class="form_point-input"
+              type="text"
+              id="full_name"
+              required
+            />
+            <label
+              class="form_point-label text-normal form_text-color"
+              for="full_name"
+              >Full Name*</label
+            >
+          </div>
+          <!-- Title / Position* -->
+          <div class="form_body-point">
+            <input
+              class="form_point-input"
+              type="text"
+              id="position"
+              required
+            />
+            <label
+              class="form_point-label text-normal form_text-color"
+              for="position"
+              >Title/Position*</label
+            >
+          </div>
+          <!-- Practice / Institution* -->
+          <div class="form_body-point form_select-point">
+            <select
+              name="sad"
+              id="asd"
+              data-placeholder="Practice / Institution*"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <!-- Email Address* -->
+          <div class="form_body-point">
+            <input class="form_point-input" type="email" id="email" required />
+            <label
+              class="form_point-label text-normal form_text-color"
+              for="email"
+              >Email Address*</label
+            >
+          </div>
+          <!-- Phone Number* -->
+          <div class="form_body-point">
+            <input class="form_point-input" type="tel" id="phone" required />
+            <label
+              class="form_point-label text-normal form_text-color"
+              for="phone"
+              >Phone Number*</label
+            >
+          </div>
+          <!-- Medical Profession* -->
+          <div class="form_body-point form_select-point">
+            <select
+              name="profession"
+              id="profession"
+              data-placeholder="Medical Profession*"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <!-- Type of Inquiry* -->
+          <div class="form_body-point form_select-point two-sections">
+            <select
+              name="Inquiry"
+              id="Inquiry"
+              data-placeholder="Type of Inquiry**"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <div class="form_body-point form_body-point-textarea two-sections">
+            <textarea
+              name="message"
+              id="message"
+              class="textarea-comment text-normal"
+            ></textarea>
+            <label
+              class="form_point-label-comment text-normal form_text-color"
+              for="message"
+              >Enter Message*</label
+            >
+          </div>
+
+          <button class="submit" type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <div id="map" class="map"></div>
+    </div>
+
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp4mypNUkiisiumY6NRcEiE0nOY9EuOO0&callback=initMap"
+    ></script>
+  </body>
+</html>
