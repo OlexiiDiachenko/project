@@ -161,32 +161,36 @@ const content = `<div class="content">
 // Create Map, Set Zoom, Remove Controls
 let map;
 
-map = new google.maps.Map(document.getElementById("map"), {
-  center: { lat: 43.45162864328603, lng: -80.51385701353273 },
-  zoom: 17,
-  zoomControl: false,
-  mapTypeControl: false,
-  scaleControl: false,
-  streetViewControl: false,
-  rotateControl: false,
-  fullscreenControl: false,
-});
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 43.45162864328603, lng: -80.51385701353273 },
+    zoom: 17,
+    zoomControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    rotateControl: false,
+    fullscreenControl: false,
+  });
 
-// Set Custom Marker
-const marker = new google.maps.Marker({
-  position: { lat: 43.45162864328603, lng: -80.51385701353273 },
-  map: map,
-  icon: "../images/marker.png",
-});
+  // Set Custom Marker
+  const marker = new google.maps.Marker({
+    position: { lat: 43.45162864328603, lng: -80.51385701353273 },
+    map: map,
+    icon: "../images/marker.png",
+  });
 
-// Set Content Block On Map
-const infowindow = new google.maps.InfoWindow({
-  content: content,
-  ariaLabel: { lat: 43.45162864328603, lng: -80.51385701353273 },
-});
+  // Set Content Block On Map
+  const infowindow = new google.maps.InfoWindow({
+    content: content,
+    ariaLabel: { lat: 43.45162864328603, lng: -80.51385701353273 },
+  });
 
-// Make Content Block Visible
-infowindow.open({
-  anchor: marker,
-  map,
-});
+  // Make Content Block Visible
+  infowindow.open({
+    anchor: marker,
+    map,
+  });
+}
+
+window.initMap = initMap();
