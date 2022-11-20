@@ -156,11 +156,11 @@ const content = `<div class="content">
   Ukraine
 </p>
 <div class="content_contact">
-  <img class="content_contact-image" src="../images/Shape.png" alt="" />
+  <img class="content_contact-image" src="./images/Shape.png" alt="" />
   <p class="content_contact-text">1-800-480-9597</p>
 </div>
 <div class="content_contact">
-  <img class="content_contact-image" src="../images/mail.png" alt="" />
+  <img class="content_contact-image" src="./images/mail.png" alt="" />
   <p class="content_contact-text">info@voodoo.com</p>
 </div>
 </div>`;
@@ -184,7 +184,7 @@ function initMap() {
   const marker = new google.maps.Marker({
     position: { lat: 43.45162864328603, lng: -80.51385701353273 },
     map: map,
-    icon: "../images/marker.png",
+    icon: "./images/marker.png",
   });
 
   // Set Content Block On Map
